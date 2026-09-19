@@ -26,8 +26,8 @@ export function RevealCard({ persona, choice, probabilities, latencyMs, bevMs, t
   const sorted = Object.entries(probabilities).sort((a, b) => b[1] - a[1]);
 
   return (
-    <section aria-labelledby="verdict-heading" className="ruled rounded-md border-2 border-ink bg-card p-5 shadow-[4px_4px_0_0_var(--color-ink)] sm:p-7">
-      <p className="font-mono text-xs uppercase tracking-widest text-ink-soft">Verdict</p>
+    <section aria-labelledby="verdict-heading" className="ruled rounded-md border border-ink bg-card p-5 sm:p-7">
+      <p className="text-sm text-ink-soft">Verdict</p>
       <h2 id="verdict-heading" ref={headingRef} tabIndex={-1} className="mt-2 outline-none">
         <span className="inline-block -rotate-2 rounded border-4 border-double border-stamp px-3 py-1 font-display text-3xl font-bold uppercase tracking-wide text-stamp sm:text-4xl">
           {choice}
@@ -60,7 +60,7 @@ export function RevealCard({ persona, choice, probabilities, latencyMs, bevMs, t
         <button
           type="button"
           onClick={onAgain}
-          className="rounded border-2 border-ink bg-card px-4 py-2 font-medium hover:bg-paper"
+          className="rounded border border-ink bg-card px-4 py-2 font-medium hover:bg-paper"
         >
           Ask {name} again
         </button>

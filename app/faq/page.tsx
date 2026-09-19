@@ -62,13 +62,15 @@ const FAQ: { q: string; a: ReactNode }[] = [
 
 export default function FaqPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-      <h1 className="font-display text-4xl font-bold sm:text-5xl">Frequently asked questions</h1>
-      <p className="mt-4 text-lg text-ink-soft">Answered at Bev&apos;s pace, but printed here for yours.</p>
-      <div className="mt-8 divide-y divide-rule border-y border-rule">
+    <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-12 lg:gap-10 [&>*]:min-w-0">
+      <div className="lg:col-span-4">
+        <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">Questions</h1>
+        <p className="mt-3 text-ink-soft">Answered at Bev&apos;s pace, printed here at yours.</p>
+      </div>
+      <div className="divide-y divide-rule border-y border-rule lg:col-span-8">
         {FAQ.map(({ q, a }, i) => (
           <details key={q} open={i < 2} className="group py-4">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-xl font-semibold">
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-lg font-semibold sm:text-xl">
               {q}
               <span aria-hidden="true" className="mt-1 font-mono text-base text-ink-soft group-open:rotate-45 motion-safe:transition-transform">
                 +

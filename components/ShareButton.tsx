@@ -54,7 +54,7 @@ export function ShareButton(props: Props) {
         type="button"
         onClick={share}
         disabled={status === "working"}
-        className="rounded border-2 border-ink bg-ink px-4 py-2 font-medium text-card hover:bg-ink-soft disabled:opacity-60"
+        className="rounded border border-ink bg-ink px-4 py-2 font-medium text-card hover:bg-ink-soft disabled:opacity-60"
       >
         {status === "working" ? "Photocopying..." : "Share"}
       </button>

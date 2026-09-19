@@ -136,7 +136,7 @@ export function Showdown() {
 
   return (
     <div className="space-y-5">
-      <details className="group rounded-md border-2 border-ink bg-card">
+      <details className="group rounded-lg border border-ink/15 bg-card">
         <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-3 font-mono text-sm">
           <span aria-hidden="true" className="text-ink-soft group-open:rotate-90 motion-safe:transition-transform">
             &gt;
@@ -150,7 +150,6 @@ export function Showdown() {
 
       <div className="text-center font-mono">
         <p className="font-semibold">Same 27 questions. Same order.</p>
-        <p className="text-xs uppercase tracking-widest text-ink-soft">27 questions · one Jev request · started together</p>
       </div>
 
       <div className="flex flex-wrap items-stretch justify-center gap-3">
@@ -158,7 +157,7 @@ export function Showdown() {
           <button
             type="button"
             onClick={start}
-            className="rounded-md border-2 border-ink bg-ink px-5 py-2.5 font-semibold text-card shadow-[3px_3px_0_0_var(--color-folder)] hover:bg-ink-soft"
+            className="rounded-md border border-ink bg-ink px-5 py-2.5 font-semibold text-card hover:bg-ink-soft"
           >
             {race ? "Race again" : "Start the race"}
           </button>
@@ -167,7 +166,7 @@ export function Showdown() {
             type="button"
             onClick={rush}
             disabled={!script}
-            className="rounded-md border-2 border-stamp bg-card px-5 py-2.5 font-semibold text-stamp hover:bg-stamp hover:text-card disabled:opacity-50"
+            className="rounded-md border border-stamp bg-card px-5 py-2.5 font-semibold text-stamp hover:bg-stamp hover:text-card disabled:opacity-50"
           >
             Rush {name}
           </button>
@@ -338,7 +337,7 @@ function Stopwatch({ ms, running, splits }: { ms: number; running: boolean; spli
     <div
       role="timer"
       aria-label="Race clock"
-      className="flex items-center gap-3 rounded-md border-2 border-ink bg-ink px-4 py-1.5 text-card shadow-[3px_3px_0_0_var(--color-folder)]"
+      className="flex items-center gap-3 rounded-md border border-ink bg-ink px-4 py-1.5 text-card"
     >
       <span className={`font-mono text-lg font-semibold tabular-nums ${running ? "text-term-text" : ""}`} aria-hidden="true">
         {formatStopwatch(ms)}
@@ -393,8 +392,8 @@ function Receipts({
   return (
     <section aria-label="Receipts" className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="rounded-md border-2 border-ink bg-card p-4">
-          <h3 className="font-mono text-xs uppercase tracking-widest text-ink-soft">Jev receipt</h3>
+        <div className="rounded-md border border-ink bg-card p-4">
+          <h3 className="font-semibold">Jev</h3>
           {rows([
             ["Requests", "1"],
             ["Input tokens", tokens],
@@ -403,8 +402,8 @@ function Receipts({
             ["Cost", cost],
           ])}
         </div>
-        <div className="rounded-md border-2 border-ink bg-card p-4">
-          <h3 className="font-mono text-xs uppercase tracking-widest text-ink-soft">{name} receipt</h3>
+        <div className="rounded-md border border-ink bg-card p-4">
+          <h3 className="font-semibold">{name}</h3>
           {rows([
             ["Requests", "1 (the same one)"],
             ["Input tokens", tokens],
@@ -440,7 +439,7 @@ function Panel({
   status?: ReactNode;
 }) {
   return (
-    <section aria-label={label} className="relative min-w-0 rounded-md border-2 border-ink bg-term pb-3 pt-4 text-term-text shadow-[4px_4px_0_0_var(--color-ink)]">
+    <section aria-label={label} className="relative min-w-0 rounded-md border border-ink bg-term pb-3 pt-4 text-term-text">
       <p className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-paper px-2 font-mono text-sm font-semibold text-ink">
         <span aria-hidden="true">-- </span>
         {title}

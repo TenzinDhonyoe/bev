@@ -7,7 +7,7 @@ export function ReviewCountdown({ remainingMs, name }: Props) {
   const clock = formatClock(remainingMs);
   return (
     <div className="sticky-note -rotate-1 px-5 py-4 text-center">
-      <p className="font-mono text-xs uppercase tracking-widest">Review in progress</p>
+      <p className="text-sm font-medium">Review in progress</p>
       <p className="font-mono text-5xl font-semibold tabular-nums sm:text-6xl" aria-hidden="true">
         {clock}
       </p>

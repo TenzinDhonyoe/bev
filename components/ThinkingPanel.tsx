@@ -22,7 +22,7 @@ export function ThinkingPanel({ lines, done, totalMs }: Props) {
   }, [lines.length, open]);
 
   return (
-    <section className="overflow-hidden rounded-md border-2 border-ink bg-term text-term-text shadow-[4px_4px_0_0_var(--color-ink)]">
+    <section className="overflow-hidden rounded-md border border-ink bg-term text-term-text">
       <h3 className="m-0">
         <button
           type="button"

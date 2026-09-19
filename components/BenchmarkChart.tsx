@@ -64,7 +64,7 @@ function Bar({ series, value, width, offEdge }: { series: keyof typeof SERIES; v
 
 export function BenchmarkChart() {
   return (
-    <figure className="rounded-md border-2 border-ink bg-card p-5 sm:p-6">
+    <figure className="rounded-lg border border-ink/15 bg-card p-5 sm:p-6">
       <figcaption className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="font-display text-xl font-semibold">Jev vs Bev</span>
         <span className="flex gap-4 text-sm text-ink-soft" aria-hidden="true">

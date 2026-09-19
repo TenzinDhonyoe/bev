@@ -33,7 +33,7 @@ function effortHint(effort: Effort, persona: Persona): string {
   return `about ${formatDuration((min + max) / 2)}`;
 }
 
-const chip = "rounded-full border-2 px-3 py-1 text-sm font-medium";
+const chip = "rounded-full border px-3 py-1 text-sm font-medium";
 const chipOn = "border-ink bg-ink text-card";
 const chipOff = "border-ink/30 bg-card hover:border-ink";
 
@@ -54,8 +54,8 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
       aria-describedby={error ? ids.error : undefined}
     >
       <fieldset>
-        <legend className="mb-2 font-mono text-xs uppercase tracking-widest text-ink-soft">Request form</legend>
-        <div className="inline-flex rounded-md border-2 border-ink bg-card p-1">
+        <legend className="sr-only">What should Bev do?</legend>
+        <div className="inline-flex rounded-md border border-ink bg-card p-1">
           {(
             [
               ["classify", "Classify"],
@@ -103,7 +103,7 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
           rows={isReview ? 6 : 4}
           aria-describedby={ids.count}
           placeholder={isReview ? "Paste the email or message here. Bev will not send it." : "Paste a support ticket, a message, anything."}
-          className="w-full resize-y rounded-md border-2 border-ink/40 bg-card px-3 py-2 leading-7 focus:border-ink"
+          className="w-full resize-y rounded-md border border-ink/40 bg-card px-3 py-2 leading-7 focus:border-ink"
         />
         <p id={ids.count} className="mt-1 text-right font-mono text-xs text-ink-soft">
           {value.text.length} / {LIMITS.textMax}
@@ -156,14 +156,14 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
                       options[i] = e.target.value;
                       set({ options, preset: "custom" });
                     }}
-                    className="min-w-0 flex-1 rounded border-2 border-ink/30 bg-card px-2 py-1.5 font-mono text-sm focus:border-ink"
+                    className="min-w-0 flex-1 rounded border border-ink/30 bg-card px-2 py-1.5 font-mono text-sm focus:border-ink"
                   />
                   <button
                     type="button"
                     aria-label={`Remove option ${i + 1}${opt ? `, ${opt}` : ""}`}
                     disabled={value.options.length <= LIMITS.optionsMin}
                     onClick={() => set({ options: value.options.filter((_, j) => j !== i), preset: "custom" })}
-                    className="h-9 w-9 rounded border-2 border-ink/30 bg-card font-mono text-ink-soft hover:border-ink hover:text-ink disabled:opacity-40"
+                    className="h-9 w-9 rounded border border-ink/30 bg-card font-mono text-ink-soft hover:border-ink hover:text-ink disabled:opacity-40"
                   >
                     x
                   </button>
@@ -189,7 +189,7 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
               {EFFORTS.map((effort) => (
                 <label
                   key={effort}
-                  className={`cursor-pointer rounded-md border-2 px-3 py-2 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-stamp ${
+                  className={`cursor-pointer rounded-md border px-3 py-2 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-stamp ${
                     value.effort === effort ? "border-ink bg-sticky" : "border-ink/30 bg-card hover:border-ink"
                   }`}
                 >
@@ -212,7 +212,7 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
       )}
 
       {error && (
-        <p id={ids.error} role="alert" className="rounded border-2 border-stamp bg-card px-3 py-2 text-stamp">
+        <p id={ids.error} role="alert" className="rounded border border-stamp bg-card px-3 py-2 text-stamp">
           {error}
         </p>
       )}
@@ -220,7 +220,7 @@ export function InputForm({ value, onChange, onSubmit, persona, error, submittin
       <button
         type="submit"
         disabled={submitting}
-        className="w-full rounded-md border-2 border-ink bg-ink px-5 py-3 text-lg font-semibold text-card shadow-[3px_3px_0_0_var(--color-folder)] hover:bg-ink-soft disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-md border border-ink bg-ink px-5 py-3 text-lg font-semibold text-card hover:bg-ink-soft disabled:opacity-60 sm:w-auto"
       >
         {isReview ? `Let ${name} review it` : `Ask ${name}`}
       </button>

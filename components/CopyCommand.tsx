@@ -17,7 +17,7 @@ export function CopyCommand({ command }: { command: string }) {
   }
 
   return (
-    <div className="flex max-w-full items-center gap-3 rounded-md border-2 border-ink bg-term py-2 pl-4 pr-2 font-mono text-sm text-term-text shadow-[3px_3px_0_0_var(--color-folder)]">
+    <div className="flex max-w-full items-center gap-3 rounded-md bg-term py-2 pl-4 pr-2 font-mono text-sm text-term-text">
       <span aria-hidden="true" className="text-term-dim">
         $
       </span>
