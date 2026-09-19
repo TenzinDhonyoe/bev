@@ -74,6 +74,9 @@ wall clock of the upstream call, and that is the "actual thinking time" users se
    site runs in mock mode (the badge only shows in dev).
 3. Deploy. Works on the free tier: no database, no storage, no cron.
 
+The live site (https://bev-six-peach.vercel.app) is connected to this repo: every push to `main` deploys to
+production, and other branches get preview URLs.
+
 ### Rate limiting
 
 `/api/classify` has a per-IP limit of 20 requests per minute, held in memory (`lib/rateLimit.ts`). On Vercel each
