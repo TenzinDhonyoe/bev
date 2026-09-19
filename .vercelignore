@@ -1,0 +1,14 @@
+# Never upload local secrets or build output
+.env
+.env.*
+!.env.example
+.next
+node_modules
+tsconfig.tsbuildinfo
+
+# unreadable files set aside after a sync-provider eviction
+.broken*
+
+# npm package build output
+packages/*/dist
+packages/*/*.tgz

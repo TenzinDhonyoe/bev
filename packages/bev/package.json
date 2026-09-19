@@ -1,0 +1,56 @@
+{
+  "name": "bev-ai",
+  "version": "0.1.0",
+  "description": "Bev: the slowest classifier in the world, at Jev prices. Real Jev answers, delivered after minutes of visible thinking.",
+  "keywords": [
+    "jev",
+    "typesafe",
+    "classifier",
+    "llm",
+    "parody",
+    "cli"
+  ],
+  "license": "MIT",
+  "author": "TenzinDhonyoe",
+  "homepage": "https://bev-six-peach.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TenzinDhonyoe/bev.git",
+    "directory": "packages/bev"
+  },
+  "bugs": {
+    "url": "https://github.com/TenzinDhonyoe/bev/issues"
+  },
+  "type": "module",
+  "bin": {
+    "bev": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "ai": "^7.0.107"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsup": "^8",
+    "typescript": "^5"
+  }
+}
